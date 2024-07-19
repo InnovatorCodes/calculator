@@ -30,3 +30,11 @@ function operate(op,num1,num2){
             break;
     }
 }
+
+const clrbtn=document.querySelector('button.clr');
+const result=document.querySelector('.result');
+const input=document.querySelector('.input');
+clrbtn.addEventListener('click',()=>{
+    result.textContent='';
+    input.textContent='';
+})

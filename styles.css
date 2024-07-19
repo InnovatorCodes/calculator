@@ -39,7 +39,7 @@ body{
 
 .buttons{
     width: 300px;
-    background-color: white;
+    background-color: #243441;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -48,9 +48,40 @@ body{
 
 .row{
     display: flex;
+    flex: auto;
+    flex-grow: 0;
+    justify-content: space-between;
+    min-height: 18%;
 }
 button{
-    flex:1;
+    flex:auto;
+    background-color: #232d35;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    min-width: 22%;
+    flex-grow: 0;
+    font-weight: 700;    
+    font-size: 24px;
+    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.6); 
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+}
+
+button.clr{
+    flex: auto;
+    min-width: 48%;
+    flex-grow: 0;
+}
+
+button.equals{
+    min-width: 48%;
+    flex: auto;
+    flex-grow: 0;
 }
 
 .input{
