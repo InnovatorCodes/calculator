@@ -63,7 +63,7 @@ button{
     flex-grow: 0;
     font-weight: 700;    
     font-size: 24px;
-    box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.6); 
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6); 
     cursor: pointer;
     text-align: center;
     display: flex;
@@ -82,14 +82,29 @@ button.equals{
     min-width: 48%;
     flex: auto;
     flex-grow: 0;
+    font-size: 28px;
 }
 
+button.sym{
+    color:  rgb(255, 148, 27);
+}
+
+button.clr{
+    color: rgb(255, 148, 27);
+}
+
+button.equals{
+    background-color: rgb(255, 148, 27);;
+    color:white;
+}
 .input{
     font-size: 32px;
     color: white;
+    min-height: 37px;
 }
 
 .result{
     font-size: 40px;
     color: white;
+    min-height: 47px;
 }
