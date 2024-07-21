@@ -23,6 +23,7 @@ body{
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1); 
 }
 
 .display{
@@ -94,14 +95,16 @@ button#equals{
     background-color: rgb(255, 148, 27);;
     color:white;
 }
-.input{
-    font-size: 32px;
-    color: white;
-    min-height: 37px;
-}
-
-.result{
+.lower{
     font-size: 40px;
     color: white;
     min-height: 47px;
+}
+
+.upper{
+    font-size: 32px;
+    color: white;
+    min-height: 37px;
+    max-width: 291px;
+    text-wrap: wrap;
 }
