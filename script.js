@@ -17,7 +17,6 @@ function div(a,b){
 let num1=0,num2=0,op;
 
 function operate(op,num1,num2){
-    console.log(op);
     switch (op) {
         case 'add':
             return(add(num1,num2));
@@ -38,7 +37,7 @@ const clrbtn=document.querySelector('button.clr');
 const result=document.querySelector('.result');
 const input=document.querySelector('.input');
 clrbtn.addEventListener('click',()=>{
-    result.textContent='';
+    result.textContent='0';
     input.textContent='0';
     num1=0;
     num2=0;
@@ -59,7 +58,10 @@ btncontainer.addEventListener('click',(event)=>{
     }
     else if(event.classList.contains('sym')){
         if(!numbuffer.length){
-            input.textContent=input.textContent.slice(0,-1)+event.textContent;
+            if(input.textContent.at(-1)==="="){
+                input.textContent=num1+event.textContent;
+            }
+            else input.textContent=input.textContent.slice(0,-1)+event.textContent;
         }
         else{
             if(!changenum){
@@ -69,6 +71,7 @@ btncontainer.addEventListener('click',(event)=>{
             else if(changenum){
                 num2=parseFloat(numbuffer);
                 num1=operate(op,num1,num2);
+                result.textContent=num1;
             } 
             input.textContent+=event.textContent;
         }
@@ -77,7 +80,6 @@ btncontainer.addEventListener('click',(event)=>{
             result.textContent=num1;
             num2=0;
         } 
-        numbuffer='';
-        console.log(num1,num2);
+        numbuffer='';   
     }
 })
