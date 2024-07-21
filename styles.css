@@ -73,18 +73,25 @@ button{
     padding-bottom: 0;
 }
 
+button:active {
+    box-shadow: 0 0;
+    transform: translateY(4px);
+}
+
+button.res:active{
+    box-shadow: 0 0;
+    transform: translateY(2px);
+}
+
 button.clr{
     flex: auto;
     min-width: 48%;
     flex-grow: 0;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6); 
 }
 
-button.sym{
+button.sym,button.clr,button.spl{
     color:  rgb(255, 148, 27);
-}
-
-button.clr{
-    color: rgb(255, 148, 27);
 }
 
 button#equals{
@@ -99,12 +106,17 @@ button#equals{
     font-size: 40px;
     color: white;
     min-height: 47px;
+    text-wrap: wrap;
+    max-width: 291px;
+    height: max-content;
 }
 
 .upper{
     font-size: 32px;
     color: white;
     min-height: 37px;
-    max-width: 291px;
-    text-wrap: wrap;
+}
+
+#bckspc{
+    font-family:serif;
 }
