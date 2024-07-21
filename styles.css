@@ -78,13 +78,6 @@ button.clr{
     flex-grow: 0;
 }
 
-button.equals{
-    min-width: 48%;
-    flex: auto;
-    flex-grow: 0;
-    font-size: 28px;
-}
-
 button.sym{
     color:  rgb(255, 148, 27);
 }
@@ -93,7 +86,11 @@ button.clr{
     color: rgb(255, 148, 27);
 }
 
-button.equals{
+button#equals{
+    min-width: 48%;
+    flex: auto;
+    flex-grow: 0;
+    font-size: 28px;
     background-color: rgb(255, 148, 27);;
     color:white;
 }
