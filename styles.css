@@ -12,6 +12,18 @@ body{
     justify-content: center;
     align-items: center;
     height: 95vh;
+    flex-direction: column;
+}
+
+.body{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+h1{
+    font-size: 48px;
+    margin: 0;
 }
 
 .container{

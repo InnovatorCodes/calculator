@@ -41,6 +41,11 @@ let startup=true;
 const clrbtn=document.querySelector('button.clr');
 const upper=document.querySelector('.upper');
 const lower=document.querySelector('.lower');
+
+document.querySelector('.buttons').addEventListener('mousedown',(event)=>{
+    event.preventDefault();
+})
+
 clrbtn.addEventListener('click',()=>{
     upper.textContent='';
     lower.textContent='0';
@@ -206,3 +211,4 @@ document.addEventListener('keydown',(event)=>{
     }
     //document.querySelector('');
 })
+
