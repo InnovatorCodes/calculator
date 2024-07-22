@@ -26,6 +26,10 @@ h1{
     margin: 0;
 }
 
+p{
+    font-size: 30px;
+}
+
 .container{
     background-color: #243441;
     width: 350px;
