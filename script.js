@@ -132,8 +132,9 @@ btncontainer.addEventListener('click',(event)=>{
     }
     else if(event.classList.contains('res')){
         if(numbuffer.length){
-            upper.textContent+=numbuffer;
-            num=operate(op,num,parseFloat(numbuffer));
+            if(upper.textContent!=numbuffer) upper.textContent+=numbuffer;
+            if(op) num=operate(op,num,parseFloat(numbuffer));
+            else num=parseFloat(numbuffer);
             num=parseFloat(num.toFixed(4));
             lower.textContent=num;
             upper.textContent+='=';

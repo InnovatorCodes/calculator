@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'alcubierre'   ;
+    font-family: 'alcubierre';
     src: url(./AlcubierreFF/Alcubierre.otf);
 }
 
@@ -92,20 +92,12 @@ button{
     align-items: center;
     justify-content: center;
     padding-bottom: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button:active {
     box-shadow: 0 0;
     transform: translateY(4px);
-}
-
-button.res{
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 1);
-}
-
-button.res:active{
-    box-shadow: 0 0;
-    transform: translateY(2px);
 }
 
 button.clr{
@@ -129,7 +121,14 @@ button#equals{
     font-size: 28px;
     background-color: rgb(255, 148, 27);;
     color:white;
+    border: 2px solid #232d35;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
 }
+button#equals:active{
+    box-shadow: 0 0;
+    transform: translateY(2px)
+}
+
 .lower{
     font-size: 40px;
     color: white;
