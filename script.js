@@ -62,26 +62,37 @@ bkspc.addEventListener('click',()=>{
         if(!numbuffer.length){
             numbuffer='0'
             lower.textContent='0';
-        }   
+        }
+        else if(numbuffer=='-'){
+            numbuffer='0';
+        }
+        num=parseFloat(numbuffer);
     }
 });
 
 btncontainer.addEventListener('click',(event)=>{
     event=event.target;
-    if(event.classList.contains('num')){
-        if(!(!numbuffer.length && event.textContent==0 && lower.textContent=='0')){
-            if(event.id=='dot' && lower.textContent=='0'|| numbuffer==''){
+    if(event.classList.contains('num') && upper.textContent.at(-1)!='='){
+        if(!(event.textContent==0 && lower.textContent=='0')){
+            if(event.id==='dot' && (lower.textContent=='0'|| numbuffer=='')){
                 numbuffer='0.';
                 lower.textContent=numbuffer;
-            } 
+            }
+            else if(lower.textContent=='-'){
+                numbuffer='-'+event.textContent;
+                lower.textContent=numbuffer;
+            }
             else{
                 numbuffer+=event.textContent;
                 lower.textContent=numbuffer;
             }
-            if(event.id=='dot') dotbtn.disabled=true;
+            if(event.id=='dot'){
+                dotbtn.disabled=true;
+            } 
         } 
     }
     else if(event.classList.contains('sym')){
+        if(lower.textContent=='-') lower.textContent=numbuffer;
         dotbtn.disabled=false;
         if(!numbuffer.length){
             upper.textContent=num+event.textContent;
@@ -122,6 +133,76 @@ btncontainer.addEventListener('click',(event)=>{
             lower.textContent=num;
             upper.textContent+='=';
             op='';
+            numbuffer='';
         }
     }
+})
+
+document.addEventListener('keydown',(event)=>{
+    document.querySelector('.display').focus();
+    const newevent=new CustomEvent('click');
+    let key=event.key.toLowerCase();
+     console.log(key);
+    switch (key) {
+        case '0':
+            document.querySelector('.num#zero').click();
+            break;
+        case '1':
+            btncontainer.querySelector('.num#one').click()
+            break;
+        case '2':
+            btncontainer.querySelector('.num#two').click();
+            break;
+        case '3':
+            btncontainer.querySelector('.num#three').click();
+            break;
+        case '4':
+            btncontainer.querySelector('.num#four').click();
+            break;
+        case '5':
+            btncontainer.querySelector('.num#five').click();
+            break;
+        case '6':
+            btncontainer.querySelector('.num#six').click();
+            break;
+        case '7':
+            btncontainer.querySelector('.num#seven').click();
+            break;
+        case '8':
+            btncontainer.querySelector('.num#eight').click();
+            break;
+        case '9':
+            btncontainer.querySelector('.num#nine').click();
+            break;
+        case 'c':
+            btncontainer.querySelector('.clr').click();
+            break;
+        case 'backspace':
+            btncontainer.querySelector('.spl#bckspc').click();
+            break;
+        case '+':
+            btncontainer.querySelector('.sym#add').click();
+            break;
+        case '-':
+            btncontainer.querySelector('.sym#sub').click();
+            break;
+        case '*':
+            btncontainer.querySelector('.sym#mul').click();
+            break;
+        case '/':
+            btncontainer.querySelector('.sym#div').click();
+            break;
+        case '=':
+            btncontainer.querySelector('.res#equals').click();
+            break;
+        case 'enter':
+            btncontainer.querySelector('.res#equals').click();
+            break;
+        case '.':
+            btncontainer.querySelector('.num#dot').click();
+            break;
+        default:
+            break;
+    }
+    //document.querySelector('');
 })
