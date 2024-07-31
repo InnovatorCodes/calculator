@@ -59,6 +59,13 @@ p{
     text-align: right;
 }
 
+.divider{
+    height: 1px;
+    width: 300px;
+    background-color: whitesmoke ;
+    margin: 10px;
+}
+
 .buttons{
     width: 300px;
     background-color: #243441;
